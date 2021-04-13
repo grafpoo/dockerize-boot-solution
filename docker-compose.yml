@@ -1,13 +1,13 @@
 version: '3.1'
 services :
   db:
-    image: grafpoo/pgtest
+    image: <username>/pgtest
     ports:
       - "5432:5432"
   app:
     image: restapi:0.0.1-SNAPSHOT
     restart: always
-    depends_on: 
+    depends_on:
       - db
     environment:
       FOOTIE_DB_HOST: db
